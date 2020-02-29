@@ -17,6 +17,7 @@ photo = "howToUseGithub.png"
 ##Then uploads the file and gives the link back
 link = UpDown.uploadFile(photo)
 merkle  = link[6:]
+print(link)
 
 ##Now we pass it a link and locaiton and it will download it
 location = "gitInstruction.png"
