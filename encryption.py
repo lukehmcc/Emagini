@@ -43,8 +43,3 @@ class encrypted_photo:
         imgdata = base64.b64decode(decrypted_string)
         with open('output.jpg', 'wb') as f:
             f.write(imgdata)
-
-<<<<<<< HEAD
-=======
-
->>>>>>> encryption
