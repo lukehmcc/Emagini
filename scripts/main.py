@@ -15,7 +15,7 @@ class BasicApp(App):
         request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
                      Permission.READ_EXTERNAL_STORAGE])
         self.SD_CARD = primary_external_storage_path()
-        return 
+        return Button(text='sup weeb') 
 
 
 ##Initiates if this is the running file
