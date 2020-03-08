@@ -13,8 +13,8 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.image import Image
 import glob
 import numpy
-from android.permissions import request_permissions, Permission
-from android.storage import primary_external_storage_path
+#from android.permissions import request_permissions, Permission
+#from android.storage import primary_external_storage_path
 
 class ImageMaker(Image):
     def on_touch_down(self, touch):
@@ -23,24 +23,22 @@ class ImageMaker(Image):
 
 ##Creates the basic gallery screen
 class Gallery(GridLayout):
+ 
     def __init__(self, **kwargs):
         super(Gallery, self).__init__(**kwargs)
-        thumb.bind(on_touch_down=self.callback)
-        self.add_widget(thumb)
-
-    def callback(self, obj, touch):
-        SD_CARD = primary_external_storage_path()
-        images = glob.glob(self.SD_CARD) 
+        #SD_CARD = primary_external_storage_path()
+        photoPath = 'home/yeet/Python/photos/' 
+        images = glob.glob(photoPath + '.png') 
         self.cols = 3
         for img in images:
             thumb = ImageMaker(source = img)
             self.add_widget(thumb)   
 
+
 ##Initaites the basic app
 class BasicApp(App):
     def build(self):
-        request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
-                     Permission.READ_EXTERNAL_STORAGE])
+        #request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
         return Gallery() 
 
 
