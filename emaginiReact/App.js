@@ -16,7 +16,7 @@ export default class HelloWorldApp extends Component {
   render() {
     return (
       <View style={helloStyle.container}>
-        <Text style={helloStyle.instructions}>Hello, world!</Text>
+        <Text style={helloStyle.instructions}>Hello, you have reached an automated voice messaging system, please dial 9 for more options...</Text>
       </View>
     );
   }
