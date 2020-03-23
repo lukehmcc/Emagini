@@ -1,12 +1,8 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
+ * This is an app created by a literal god
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,31 +12,26 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  render(){
+export default class HelloWorldApp extends Component {
+  render() {
     return (
-      <View style={styles.container}>
-        <Text> Hello this is an app</Text>
-        <Text> Hey Will ur bad</Text>
-      </View>  
+      <View style={helloStyle.container}>
+        <Text style={helloStyle.instructions}>Hello, world!</Text>
+      </View>
     );
   }
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const helloStyle = StyleSheet.create({
+  container: { 
+              flex: 1, 
+              justifyContent: "center", 
+              alignItems: "center", 
+              backgroundColor: '#32a852' 
   },
+  instructions: {
+              textAlign: 'center',
+		          color: '#333333',
+		          marginBottom: 5
+  }
 });
-
-export default App;
