@@ -10,41 +10,36 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import styled from 'styled-components';
 
 export default class emagini extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.thiccText}>Hello, you have reached an automated voice messaging system, please dial 9 for more options...</Text>
-        </View>
-        <View style={styles.body}>
-          <Text style={styles.thinText}>Good morning</Text>
-        </View>
-      </View>
+      <Container>
+        <Title>Welcome user</Title>
+        <Title2>to Emagini</Title2>
+      </Container>
+      
     );
   }
 }
-const styles = StyleSheet.create({
-  container: { 
-              flex: 1, 
-              justifyContent: "center", 
-              alignItems: "center", 
-              backgroundColor: '#FFFFFF'
-  },
-  header:{
-              textAlign: 'center'
-  },
-  thiccText: {
-              textAlign: 'center',
-    		      color: '#333333',
-		          marginBottom: 5
-  },
-  body: { 
-              backgroundColor: '#00c0f0',
-              width: '100%'
-  },
-  thinText: {
-              textAlign: 'center'
-  },
-});
+const Container = styled.View`
+	flex: 1;
+	background-color: #32a848;
+	justify-content: flex-start;
+  align-items: flex-end;
+  padding: 20px;
+  padding-top: 50px;
+`;
+
+const Title = styled.Text`
+	font-size: 50px;
+	font-weight: 500;
+	color: lightgrey;
+`;
+const Title2 = styled.Text`
+	font-size: 50px;
+	font-weight: 500;
+  color: grey;
+  
+`;
