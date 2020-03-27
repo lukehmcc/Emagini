@@ -24,22 +24,29 @@ export default class emagini extends Component {
   }
 }
 const Container = styled.View`
-	flex: 1;
 	background-color: #32a848;
-	justify-content: flex-start;
-  align-items: flex-end;
-  padding: 20px;
-  padding-top: 50px;
+  position: relative;
+  height: 50%;
 `;
-
+const Container2 = styled.View`
+  background-color: #FFFFFF;
+  position: relative;
+  height: 50%;
+`;
 const Title = styled.Text`
+  padding-top: 50px;
 	font-size: 50px;
 	font-weight: 500;
-	color: lightgrey;
+  color: lightgrey;
+  text-align: right;
+  padding: 20px;
+  padding-bottom: 5px;
 `;
 const Title2 = styled.Text`
 	font-size: 50px;
 	font-weight: 500;
   color: grey;
-  
+  text-align: right;
+  padding: 20px;
+  padding-top: 0px;
 `;
