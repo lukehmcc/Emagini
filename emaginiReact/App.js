@@ -1,4 +1,4 @@
-/**
+g/**
  * This is an app created by a literal god
  */
 
@@ -24,9 +24,23 @@ export default class emagini extends Component {
   }
 }
 const Container = styled.View`
-	background-color: #32a848;
+  background-color: #32a848;
   position: relative;
   height: 50%;
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    backgroung: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top right;
+    transform: skewY(-4deg);
+
+  }
 `;
 const Container2 = styled.View`
   background-color: #FFFFFF;
