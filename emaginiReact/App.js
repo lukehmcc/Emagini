@@ -9,6 +9,8 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
+  ImageBackground,
 } from 'react-native';
 import styled from 'styled-components';
 
@@ -29,7 +31,8 @@ export default class emagini extends Component {
 const MegaContainer = styled.View`
 `;
 const Container = styled.View`
-    background-color: #32a849;
+    background-image: url("https://emaginiphotos.s3.filebase.com/mountains.jpg");
+    background-color: #DDDDDD;
     position: relative;
     height: 30%;
     width: 110%;
@@ -50,7 +53,6 @@ const TitleHead = styled.Text`
     text-align: right;
     padding: 20px;
     padding-bottom: 5px;
-    
     left: -3%;
     top: 5%;
     transform:rotate(-5deg);
