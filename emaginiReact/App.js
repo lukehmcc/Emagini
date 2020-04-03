@@ -12,56 +12,54 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import styled from 'styled-components';
+import { AuthSession } from 'expo';
+
+const river = {uri:"https://emaginiphotos.s3.filebase.com/river.jpg"}
+const mountains = {uri:"https://emaginiphotos.s3.filebase.com/mountains.jpg"}
 
 export default class emagini extends Component {
     render() {
         return (
-            <MegaContainer>
-                <Container>
-                    <TitleHead> Welcome user to Emagini </TitleHead>
-                </Container>
-                <Container2>
-                    <Title2> Ello Governer </Title2>
-                </Container2>
-            </MegaContainer>
+            <View style={styles.container}>
+                <ImageBackground source={mountains} style={styles.mountains}>
+                    <View style={styles.firstBox}>
+                        <Text style={styles.title}> Welcome user to Emagini bad jfajfdjafljlfjkdsafdsahffdafhdkjsafdvghjhghjkhgfghjhgfghjhgfghjgfghjgfghjgfghgfghgfghgfghgfhkhjhjhjkijhjkihgihihgihgjkihgkhgihgjfghgfguyfdfghgf </Text>
+                    </View>
+                </ImageBackground>
+                <ImageBackground source={river} style={styles.river}>
+                    <View style={styles.secondBox}>
+                        <Text>ello Governer</Text>
+                    </View>
+                </ImageBackground>
+            </View>
         );
     }
 }
-const MegaContainer = styled.View`
-`;
-const Container = styled.View`
-    background-image: url("https://emaginiphotos.s3.filebase.com/mountains.jpg");
-    background-color: #DDDDDD;
-    position: relative;
-    height: 30%;
-    width: 110%;
-    top:-5%;
-    left:-5%;
-    transform:rotate(5deg);
-`;
-const Container2 = styled.View`
-    background-color: #FFFFFF;
-    position: relative;
-    height: 50%;
-`;
-const TitleHead = styled.Text`
-    padding-top: 50px;
-    font-size: 50px;
-    font-weight: 500;
-    color: lightgrey;
-    text-align: right;
-    padding: 20px;
-    padding-bottom: 5px;
-    left: -3%;
-    top: 5%;
-    transform:rotate(-5deg);
-`;
-const Title2 = styled.Text`
-    font-size: 50px;
-    font-weight: 500;
-    color: grey;
-    text-align: right;
-    padding: 20px;
-    padding-top: 0px;
-`;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    firstBox: {
+        height: '30%',
+        flexDirection: "row-reverse" 
+    },
+    title: {
+        color: "grey",
+        fontSize: 30,
+        fontWeight: "bold"
+    },
+    mountains:{
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+    },
+    river: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+    },
+    secondBox:{
+        height: "80%"
+    },
+    
+});  
