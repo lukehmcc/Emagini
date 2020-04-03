@@ -48,7 +48,9 @@ export default class emagini extends Component {
                     <Text style={styles.title2}> To <Text style={styles.title3}> Emagini </Text> </Text>
                     <View style={styles.triangleCorner}></View>
                     <View style={styles.textbox}>
-                        <Text></Text>
+                        <View style={styles.textbox2}>
+                           <Text></Text>
+                        </View>
                     </View>
                 </ImageBackground>
             </View>
@@ -67,24 +69,21 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end', 
-        textShadowColor: 'white',
-        textShadowRadius: 10,
+        
     },
     title2: {
         color: '#363636',
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end',
-        textShadowColor: 'white',
-        textShadowRadius: 10,
+        
     },
     title3: {
         color: 'white',
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end',
-        textShadowColor: 'black',
-        textShadowRadius: 10,
+        
     },
     mountains:{
         height:'100%',
@@ -110,5 +109,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#40404080',
         width: '100%',
         height: '100%',
-    }
+    },
+    textbox2: {
+        backgroundColor: '#40404090',
+        width: '95%',
+        height: '70%',
+        alignSelf: 'center',
+        marginTop: 20,
+    },
 });  
