@@ -13,6 +13,27 @@ import {
   ImageBackground,
 } from 'react-native';
 import { AuthSession } from 'expo';
+import Svg, {
+    Circle,
+    Ellipse,
+    G,
+    TSpan,
+    TextPath,
+    Path,
+    Polygon,
+    Polyline,
+    Line,
+    Rect,
+    Use,
+    Symbol,
+    Defs,
+    LinearGradient,
+    RadialGradient,
+    Stop,
+    ClipPath,
+    Pattern,
+    Mask,
+  } from 'react-native-svg';
 
 const river = {uri:"https://emaginiphotos.s3.filebase.com/river.jpg"}
 const mountains = {uri:"https://emaginiphotos.s3.filebase.com/mountains.jpg"}
@@ -26,7 +47,8 @@ export default class emagini extends Component {
                     <Text style={styles.title2}> To Emagini </Text>
                 </ImageBackground>
                 <View style={styles.line}>
-
+                    <Svg height="50%" width="50%" viewBox="0 0 100 100">
+                    </Svg>
                 </View>
                 <ImageBackground source={river} style={styles.river}>
                     <Text>ello Governer</Text>
@@ -52,6 +74,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end',
 
     },
+
     mountains:{
         flex: 1,
         resizeMode: "cover",
