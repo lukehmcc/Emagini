@@ -22,14 +22,14 @@ export default class emagini extends Component {
         return (
             <View style={styles.container}>
                 <ImageBackground source={mountains} style={styles.mountains}>
-                    <View style={styles.firstBox}>
-                        <Text style={styles.title}> Welcome user to Emagini bad jfajfdjafljlfjkdsafdsahffdafhdkjsafdvghjhghjkhgfghjhgfghjhgfghjgfghjgfghjgfghgfghgfghgfghgfhkhjhjhjkijhjkihgihihgihgjkihgkhgihgjfghgfguyfdfghgf </Text>
-                    </View>
+                    <Text style={styles.title}> Welcome User </Text>
+                    <Text style={styles.title2}> To Emagini </Text>
                 </ImageBackground>
+                <View style={styles.line}>
+
+                </View>
                 <ImageBackground source={river} style={styles.river}>
-                    <View style={styles.secondBox}>
-                        <Text>ello Governer</Text>
-                    </View>
+                    <Text>ello Governer</Text>
                 </ImageBackground>
             </View>
         );
@@ -37,29 +37,36 @@ export default class emagini extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1
-    },
-    firstBox: {
-        height: '30%',
-        flexDirection: "row-reverse" 
+        flex: 1,
     },
     title: {
-        color: "grey",
+        color: "white",
         fontSize: 30,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        alignSelf: 'flex-end', 
+    },
+    title2: {
+        color: 'lightgrey',
+        fontSize: 30,
+        fontWeight: "bold",
+        alignSelf: 'flex-end',
+
     },
     mountains:{
         flex: 1,
         resizeMode: "cover",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: 'white',
+        opacity: 5,
     },
     river: {
-        flex: 1,
+        flex: 3,
         resizeMode: "cover",
-        justifyContent: "center"
+        justifyContent: "center",
     },
-    secondBox:{
-        height: "80%"
-    },
+    line:{
+        backgroundColor: 'grey',
+        flex: .02,
+    }
     
 });  
