@@ -43,15 +43,13 @@ export default class emagini extends Component {
         return (
             <View style={styles.container}>
                 <ImageBackground source={mountains} style={styles.mountains}>
+                    <View style={styles.spacer}></View>
                     <Text style={styles.title}> Welcome User </Text>
-                    <Text style={styles.title2}> To Emagini </Text>
-                </ImageBackground>
-                <View style={styles.line}>
-                    <Svg height="50%" width="50%" viewBox="0 0 100 100">
-                    </Svg>
-                </View>
-                <ImageBackground source={river} style={styles.river}>
-                    <Text>ello Governer</Text>
+                    <Text style={styles.title2}> To <Text style={styles.title3}> Emagini </Text> </Text>
+                    <View style={styles.triangleCorner}></View>
+                    <View style={styles.textbox}>
+                        <Text></Text>
+                    </View>
                 </ImageBackground>
             </View>
         );
@@ -59,37 +57,58 @@ export default class emagini extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+ 
+    },
+    spacer: { 
+        margin: 20,
     },
     title: {
-        color: "white",
-        fontSize: 30,
+        color: "#363636",
+        fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end', 
+        textShadowColor: 'white',
+        textShadowRadius: 10,
     },
     title2: {
-        color: 'lightgrey',
-        fontSize: 30,
+        color: '#363636',
+        fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end',
-
+        textShadowColor: 'white',
+        textShadowRadius: 10,
     },
-
+    title3: {
+        color: 'white',
+        fontSize: 40,
+        fontWeight: "bold",
+        alignSelf: 'flex-end',
+        textShadowColor: 'black',
+        textShadowRadius: 10,
+    },
     mountains:{
-        flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center",
-        backgroundColor: 'white',
-        opacity: 5,
+        height:'100%',
     },
-    river: {
-        flex: 3,
-        resizeMode: "cover",
-        justifyContent: "center",
-    },
-    line:{
-        backgroundColor: 'grey',
-        flex: .02,
+
+    triangleCorner: {
+        width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderTopWidth: 0,
+        borderRightWidth: 600,
+        borderBottomWidth: 90,
+        borderLeftWidth: 0,
+        borderTopColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderLeftColor: 'transparent',
+        borderBottomColor: '#40404080',
+        alignSelf: 'flex-end',
+        marginTop: -40,
+    },    
+    textbox: {
+        backgroundColor: '#40404080',
+        width: '100%',
+        height: '100%',
     }
-    
 });  
