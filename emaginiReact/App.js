@@ -49,7 +49,10 @@ export default class emagini extends Component {
                     <View style={styles.triangleCorner}></View>
                     <View style={styles.textbox}>
                         <View style={styles.textbox2}>
-                           <Text></Text>
+                           <Text style={styles.mainText1}>
+                               Emagini is the photo sharing app that respects your security 
+                           </Text>
+                           
                         </View>
                     </View>
                 </ImageBackground>
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
  
     },
     spacer: { 
-        margin: 20,
+        padding: 20,
     },
     title: {
         color: "#363636",
@@ -76,14 +79,19 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end',
-        
+        paddingRight: 20,        
     },
     title3: {
         color: 'white',
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'flex-end',
-        
+        paddingRight: 10,   
+    },
+    mainText1: { 
+        fontSize: 20,
+        color: '#FFFFFF',
+        padding: 10,
     },
     mountains:{
         height:'100%',
@@ -111,9 +119,9 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     textbox2: {
-        backgroundColor: '#40404090',
-        width: '95%',
-        height: '70%',
+        backgroundColor: '#40404050',
+        width: '90%',
+        height: '65%',
         alignSelf: 'center',
         marginTop: 20,
     },
