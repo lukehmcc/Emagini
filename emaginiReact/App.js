@@ -41,9 +41,6 @@ const river = {uri:"https://emaginiphotos.s3.filebase.com/river.jpg"}
 const mountains = {uri:"https://emaginiphotos.s3.filebase.com/mountains.jpg"}
 
 function Emagini() {
-
-    
-
     return (
         <View style={styles.container}>
                 <LinearGradient colors={['#FFFFFF', '#8cacc9c7']} style={styles.gradient}>
