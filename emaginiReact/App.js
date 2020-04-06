@@ -39,7 +39,7 @@ import Svg, {
 
 const river = {uri:"https://emaginiphotos.s3.filebase.com/river.jpg"}
 const mountains = {uri:"https://emaginiphotos.s3.filebase.com/mountains.jpg"}
-
+const polariod = '../assets/polariod.png'
 function Emagini() {
 
     return (
@@ -56,7 +56,7 @@ function Emagini() {
                         </View>
                     </View>
 
-                    
+                    <Image style={styles.polariod} source={require('./polariod.png')} ></Image>
                     <View style={styles.lineBelowPols}/>
 
                     <View>
@@ -125,8 +125,6 @@ const styles = StyleSheet.create({
     polariod: {
         width: '10%',
         height: '10%',
-        backgroundColor: 'black',
-        borderBottomColor: 'white',
     }
 
 });  
