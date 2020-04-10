@@ -42,7 +42,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import EmaginiStartScreen from './app/index'
 
 
-const polaroidPic = './assets/polariod.png'
+const polaroidPic = './assets/images/polariod.png'
 
 function cacheImages(images) {
     return images.map(image => {

@@ -1,7 +1,7 @@
 /*
  This is an app created by a literal god
  */
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -11,12 +11,13 @@ import {
     Image,
     ImageBackground,
     Button,
-    Animated,
 } from 'react-native';
 import { 
     AppLoading,
     AuthSession,
+    Font,
 } from 'expo';
+import * as Font From 'expo-font';
 import { Asset } from 'expo-asset';
 import Svg, {
     Circle,
@@ -39,11 +40,30 @@ import Svg, {
     Mask,
   } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
-
-const polariodPic = './assets/images/polariod.png';
+import { Animated } from 'react-native-reanimated';
+import { 
+    TapGestureHandler, 
+    State,
+} from 'react-native-gesture-handler';
+const polaroidPic = '../assets/images/polariod.png';
+const { 
+    Value, 
+    clock, 
+    event, 
+    block, 
+    cond, 
+    eq, 
+    set 
+} = Animated;
+const fetchFonts = () => {
+    return Font.loadAsync({
+    'Ubuntu-L': require('./assets/fonts/Ubuntu-L.ttf'),
+    'Ubuntu-R': require('./assets/fonts/Ubuntu-R.ttf'),
+    'Ubuntu-B': require('./assets/fonts/Ubuntu-B.ttf')
+    });
+};
 
 class EmaginiStartScreen extends Component {
-
     render(){
         return(
             <View style={styles.container}>
@@ -60,12 +80,11 @@ class EmaginiStartScreen extends Component {
                         </View>
 
                         <View style={styles.polariodContainer}>
-                        
                             <Image style={styles.polariod} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod2} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod3} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod4} source={require(polaroidPic)} ></Image>
-                            <Image style={styles.polariod5} source={require(polaroidPic)} ></Image>
+                            <Image style={styles.polariod5} source={require(polaroidPic)} ></Image>  
                         </View>
                         <View style={styles.lineBelowPols}/>
 
@@ -83,6 +102,9 @@ class EmaginiStartScreen extends Component {
         )
     }
 }
+
+export default EmaginiStartScreen;
+
 const styles = StyleSheet.create({
     container: {
     },
@@ -126,6 +148,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#2e2e2e',
         padding: 10,
+        fontFamily: 'Ubuntu-R',
     },
     lineBelowPols: {
         borderBottomColor: 'darkgrey',
