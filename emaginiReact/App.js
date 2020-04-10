@@ -37,11 +37,9 @@ import Svg, {
   import { LinearGradient } from 'expo-linear-gradient'
 
 
-const river = {uri:"https://emaginiphotos.s3.filebase.com/river.jpg"}
-const mountains = {uri:"https://emaginiphotos.s3.filebase.com/mountains.jpg"}
-const polariod = '../assets/polariod.png'
-function Emagini() {
+const polaroidPic = './assets/polariod.png'
 
+function Emagini() {
     return (
         <View style={styles.container}>
                 <LinearGradient colors={['#FFFFFF', '#8cacc9c7']} style={styles.gradient}>
@@ -56,8 +54,16 @@ function Emagini() {
                         </View>
                     </View>
 
-                    <Image style={styles.polariod} source={require('./polariod.png')} ></Image>
+                    <View style={styles.polariodContainer}>
+                        
+                        <Image style={styles.polariod} source={require(polaroidPic)} ></Image>
+                        <Image style={styles.polariod2} source={require(polaroidPic)} ></Image>
+                        <Image style={styles.polariod3} source={require(polaroidPic)} ></Image>
+                        <Image style={styles.polariod4} source={require(polaroidPic)} ></Image>
+                        <Image style={styles.polariod5} source={require(polaroidPic)} ></Image>
+                    </View>
                     <View style={styles.lineBelowPols}/>
+
 
                     <View>
                         <Text style={styles.words}>
@@ -73,7 +79,6 @@ function Emagini() {
 }
 const styles = StyleSheet.create({
     container: {
- 
     },
     gradient: { 
         height: '100%',
@@ -86,7 +91,6 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: 'center', 
-        
     },
     title2: {
         color: '#363636',
@@ -121,12 +125,61 @@ const styles = StyleSheet.create({
         borderBottomColor: 'darkgrey',
         borderBottomWidth: 2,
         padding: 10,
+        width: '80%',
+        alignSelf: 'center',
+    },
+    polariodContainer: {
+        flexDirection: 'row',
+        flex: .3,
+        justifyContent: 'center',
+        marginBottom: -30,
     },
     polariod: {
-        width: '10%',
-        height: '10%',
-    }
+        flex: .1,
+        alignSelf: 'center',
+        position: 'absolute',
+        transform: [{ rotate: '-30deg'},
+                { translateX: -20 }],
+        borderWidth: 1,
+        borderColor: "white",
+    },
+    polariod2: {
+        flex: .1,
 
+        alignSelf: 'center',
+        position: 'absolute',
+        transform: [{ rotate: '-15deg'},
+                { translateX: -10 }],
+        borderWidth: 1,
+        borderColor: "white",
+    },
+    polariod3: {
+        flex: .1,
+        alignSelf: 'center',
+        position: 'absolute',
+        transform: [{ rotate: '0deg'},
+                { translateX: 0 }],
+        borderWidth: 1,
+        borderColor: "white",
+    },
+    polariod4: {
+        flex: .1,
+        alignSelf: 'center',
+        position: 'absolute',
+        transform: [{ rotate: '15deg'},
+                { translateX: 10 }],
+        borderWidth: 1,
+        borderColor: "white",
+    },
+    polariod5: {
+        flex: .1,
+        alignSelf: 'center',
+        position: 'absolute',
+        transform:[{ rotate: '30deg'},
+                { translateX: 20 }],
+        borderWidth: 1,
+        borderColor: "white",
+    },
 });  
 
 export default Emagini;
