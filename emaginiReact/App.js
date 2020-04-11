@@ -11,7 +11,6 @@ import {
     Image,
     ImageBackground,
     Button,
-    Animated,
 } from 'react-native';
 import { 
     AppLoading,
@@ -39,22 +38,22 @@ import Svg, {
     Mask,
   } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
-import EmaginiStartScreen from './app/index'
+import * as Font from 'expo-font';
+import EmaginiStartScreen from './app/index';
 
 
 const polaroidPic = './assets/images/polariod.png'
 
-function cacheImages(images) {
-    return images.map(image => {
-      if (typeof image === 'string') {
-        return Image.prefetch(image);
-      } else {
-        return Asset.fromModule(image).downloadAsync();
-      }
-    });
-  }
 
 export default class Emagini extends React.Component {
+    
+    async componentDidMount() {
+      await Font.loadAsync({
+        regular: require('./assets/fonts/Ubuntu-R.ttf'),
+        bold: require('./assets/fonts/Ubuntu-B.ttf'),
+        light: require('./assets/fonts/Ubuntu-L.ttf'),
+      })
+    }
 
     constructor() {
         super()
@@ -63,24 +62,7 @@ export default class Emagini extends React.Component {
         }
     }
 
-    async _loadAssetsAsync() {
-        const imageAssets = cacheImages([
-          require('./assets/images/polariod.png'),
-        ]);
-        
-        await Promise.all([...imageAssets]);
-    }
-
     render(){
-        if (!this.state.isReady) {
-            return (
-              <AppLoading
-                startAsync={this._loadAssetsAsync}
-                onFinish={() => this.setState({ isReady: true })}
-                onError={console.warn}
-              />
-            );
-        }
         return <EmaginiStartScreen/>;
     }
 }

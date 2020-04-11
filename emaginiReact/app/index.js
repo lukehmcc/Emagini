@@ -15,9 +15,8 @@ import {
 import { 
     AppLoading,
     AuthSession,
-    Font,
 } from 'expo';
-import * as Font From 'expo-font';
+import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import Svg, {
     Circle,
@@ -40,30 +39,29 @@ import Svg, {
     Mask,
   } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Animated } from 'react-native-reanimated';
+import Animated, { Easing } from 'react-native-reanimated';
 import { 
     TapGestureHandler, 
     State,
 } from 'react-native-gesture-handler';
-const polaroidPic = '../assets/images/polariod.png';
 const { 
-    Value, 
-    clock, 
-    event, 
-    block, 
-    cond, 
-    eq, 
-    set 
-} = Animated;
-const fetchFonts = () => {
-    return Font.loadAsync({
-    'Ubuntu-L': require('./assets/fonts/Ubuntu-L.ttf'),
-    'Ubuntu-R': require('./assets/fonts/Ubuntu-R.ttf'),
-    'Ubuntu-B': require('./assets/fonts/Ubuntu-B.ttf')
-    });
-};
+Value, 
+timing, 
+} = Animated; 
+const polaroidPic = '../assets/images/polariod.png';
 
 class EmaginiStartScreen extends Component {
+
+    constructor(props) {
+        super(props);
+        this._rotX = new Value(0);
+        this._config = {
+            duration: 5000,
+            toValue: 1,
+            easing: Easing.inOut(Easing.ease),
+        };
+        this._anim = timing(this._rotX, this._config);
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -78,14 +76,22 @@ class EmaginiStartScreen extends Component {
                                 </Text> 
                             </View>
                         </View>
-
-                        <View style={styles.polariodContainer}>
+                        {() => {
+                                    this._anim.start();
+                                }}
+                        <Animated.View style={[styles.polariodContainer, { transform: [{ rotateZ: this._rotX }] }]}>
                             <Image style={styles.polariod} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod2} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod3} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod4} source={require(polaroidPic)} ></Image>
                             <Image style={styles.polariod5} source={require(polaroidPic)} ></Image>  
-                        </View>
+                            <Button
+                                onPress={() => {
+                                    this._anim.start();
+                                }}
+                                title="Start"
+                            />
+                        </Animated.View>
                         <View style={styles.lineBelowPols}/>
 
 
@@ -117,21 +123,21 @@ const styles = StyleSheet.create({
     title: {
         color: "#363636",
         fontSize: 40,
-        fontWeight: "bold",
         alignSelf: 'center', 
+        fontFamily: 'bold',
     },
     title2: {
         color: '#363636',
         fontSize: 40,
-        fontWeight: "bold",
         alignSelf: 'flex-end',
         paddingRight: -20,
+        fontFamily: 'bold',
     },
     title3: {
         color: 'white',
         fontSize: 40,
-        fontWeight: "bold",
         alignSelf: 'center',
+        fontFamily: 'bold',
     },
     sameLine: {
         flexDirection: 'row',
@@ -148,7 +154,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#2e2e2e',
         padding: 10,
-        fontFamily: 'Ubuntu-R',
+        fontFamily: 'regular',
+        justifyContent: 'center',
     },
     lineBelowPols: {
         borderBottomColor: 'darkgrey',
