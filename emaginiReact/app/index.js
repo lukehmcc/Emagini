@@ -1,7 +1,7 @@
 /*
  This is an app created by a literal god
  */
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -10,7 +10,7 @@ import {
     StatusBar,
     Image,
     ImageBackground,
-    Button,
+    TouchableOpacity,
 } from 'react-native';
 import { 
     AppLoading,
@@ -48,20 +48,22 @@ const {
 Value, 
 timing, 
 } = Animated; 
-const polaroidPic = '../assets/images/polariod.png';
+const polaroidPic = '../assets/images/polariods.png';
 
 class EmaginiStartScreen extends Component {
 
-    constructor(props) {
-        super(props);
-        this._rotX = new Value(0);
-        this._config = {
-            duration: 5000,
-            toValue: 1,
-            easing: Easing.inOut(Easing.ease),
-        };
-        this._anim = timing(this._rotX, this._config);
-    }
+    // This is for later
+    // constructor(props) {
+    //     super(props);
+    //     this._rotX = new Value(0);
+    //     this._config = {
+    //         duration: 5000,
+    //         toValue: 1,
+    //         easing: Easing.inOut(Easing.ease),
+    //     };
+    //     this._anim = timing(this._rotX, this._config);
+    // }
+    
     render(){
         return(
             <View style={styles.container}>
@@ -76,32 +78,27 @@ class EmaginiStartScreen extends Component {
                                 </Text> 
                             </View>
                         </View>
-                        {() => {
-                                    this._anim.start();
-                                }}
-                        <Animated.View style={[styles.polariodContainer, { transform: [{ rotateZ: this._rotX }] }]}>
-                            <Image style={styles.polariod} source={require(polaroidPic)} ></Image>
-                            <Image style={styles.polariod2} source={require(polaroidPic)} ></Image>
-                            <Image style={styles.polariod3} source={require(polaroidPic)} ></Image>
-                            <Image style={styles.polariod4} source={require(polaroidPic)} ></Image>
-                            <Image style={styles.polariod5} source={require(polaroidPic)} ></Image>  
-                            <Button
-                                onPress={() => {
-                                    this._anim.start();
-                                }}
-                                title="Start"
-                            />
-                        </Animated.View>
+                        
+                        <Image style={styles.polariod} source={require(polaroidPic)} ></Image> 
                         <View style={styles.lineBelowPols}/>
 
 
-                        <View>
+                        <View style={styles.wordsAndLinesContainer}>
                             <Text style={styles.words}>
-                                A photo backup Service that respects your privacy…
+                                A photo backup Service that <Text style={styles.wordsBold}> respects </Text> your privacy…
                             </Text>
-                            <Text style={styles.words}>
-                                A novel idea right?
+                            <Text style={styles.words2}>
+                                A <Text style={styles.wordsBold}> novel idea </Text> right?
                             </Text>
+                        </View>
+
+                        <View style={styles.buttonContainer}>
+                            <TouchableOpacity style={styles.getStartedButton}>
+                                <Text style={styles.buttonText1}>Let's get started!</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity >
+                                <Text style={styles.buttonText2}>Hey! I already have an account!</Text>
+                            </TouchableOpacity>
                         </View>
                     </LinearGradient>
             </View>
@@ -113,29 +110,31 @@ export default EmaginiStartScreen;
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
     },
     gradient: { 
-        height: '100%',
+        flex: 1,
     },
     spacer: { 
         padding: 20,
     },
     title: {
         color: "#363636",
-        fontSize: 40,
+        fontSize: 45,
         alignSelf: 'center', 
         fontFamily: 'bold',
+        height: '10%',
     },
     title2: {
         color: '#363636',
-        fontSize: 40,
+        fontSize: 45,
         alignSelf: 'flex-end',
         paddingRight: -20,
         fontFamily: 'bold',
     },
     title3: {
         color: 'white',
-        fontSize: 40,
+        fontSize: 45,
         alignSelf: 'center',
         fontFamily: 'bold',
     },
@@ -145,76 +144,84 @@ const styles = StyleSheet.create({
     },
     emaginiBox: {
         backgroundColor: '#8cacc9',
-        width: '46%',
+        width: '50%',
         height: '100%',
         borderRadius: 20,
     },
+    wordsAndLinesContainer: {
+        
+    },
     words: {
+        fontSize: 25,
+        color: '#2e2e2e',
+        padding: 10,
+        fontFamily: 'regular',
+        width: '100%',
+        textAlign: 'center',
+    },
+    words2: {
         alignSelf: 'center',
-        fontSize: 20,
+        fontSize: 25,
         color: '#2e2e2e',
         padding: 10,
         fontFamily: 'regular',
         justifyContent: 'center',
+        width: '80%',
+        textAlign: 'center',
+    },
+    wordsBold: {
+        fontFamily: 'bold',
+        fontSize: 25,
     },
     lineBelowPols: {
-        borderBottomColor: 'darkgrey',
-        borderBottomWidth: 2,
-        padding: 10,
+        borderBottomColor: 'grey',
+        borderBottomWidth: 3,
         width: '80%',
         alignSelf: 'center',
-    },
-    polariodContainer: {
-        flexDirection: 'row',
-        flex: .3,
-        justifyContent: 'center',
-        marginBottom: -30,
+        marginTop: -3,
     },
     polariod: {
-        flex: .1,
-        alignSelf: 'center',
-        position: 'absolute',
-        transform: [{ rotate: '-30deg'},
-                { translateX: -20 }],
-        borderWidth: 1,
-        borderColor: "white",
+        marginTop: -20,
+        flex: .5,
+        width: null,
+        height: null,
+        resizeMode: 'contain',
+        borderColor: 'black',
     },
-    polariod2: {
-        flex: .1,
-
+    buttonContainer: {
+        flex: .6,
+        alignItems: 'center',
         alignSelf: 'center',
-        position: 'absolute',
-        transform: [{ rotate: '-15deg'},
-                { translateX: -10 }],
-        borderWidth: 1,
-        borderColor: "white",
+        justifyContent: 'center',
     },
-    polariod3: {
-        flex: .1,
+    buttonText1: {
         alignSelf: 'center',
-        position: 'absolute',
-        transform: [{ rotate: '0deg'},
-                { translateX: 0 }],
-        borderWidth: 1,
-        borderColor: "white",
+        fontSize: 20,
+        color: '#fdfdfd',
+        padding: 10,
+        fontFamily: 'bold',
+        justifyContent: 'center',
+        width: '100%',
+        textAlign: 'center',
+        flex: .8, // For some reason this controlls the vertical location of the text in the button
     },
-    polariod4: {
-        flex: .1,
+    buttonText2: {
         alignSelf: 'center',
-        position: 'absolute',
-        transform: [{ rotate: '15deg'},
-                { translateX: 10 }],
-        borderWidth: 1,
-        borderColor: "white",
+        fontSize: 20,
+        color: '#2e2e2e',
+        fontFamily: 'regular',
+        justifyContent: 'center',
+        width: '100%',
+        textAlign: 'center',
+        flex: .4, // For some reason this controlls the vertical location of the buttons??
     },
-    polariod5: {
-        flex: .1,
+    getStartedButton: {
+        backgroundColor: '#8cacc9',
+        width: '50%',
+        height: '20%',
+        borderRadius: 20,
+        alignItems: 'center',
         alignSelf: 'center',
-        position: 'absolute',
-        transform:[{ rotate: '30deg'},
-                { translateX: 20 }],
-        borderWidth: 1,
-        borderColor: "white",
+        justifyContent: 'center',
     },
 });  
-

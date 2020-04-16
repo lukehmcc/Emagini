@@ -46,23 +46,26 @@ const polaroidPic = './assets/images/polariod.png'
 
 
 export default class Emagini extends React.Component {
-    
+    constructor(props){
+        super(props);
+        this.state = { loading: true };
+    }
+
     async componentDidMount() {
       await Font.loadAsync({
         regular: require('./assets/fonts/Ubuntu-R.ttf'),
         bold: require('./assets/fonts/Ubuntu-B.ttf'),
         light: require('./assets/fonts/Ubuntu-L.ttf'),
-      })
-    }
-
-    constructor() {
-        super()
-        this.state={
-            isReady:false
-        }
+      });
+      this.setState({ loading: false });
     }
 
     render(){
-        return <EmaginiStartScreen/>;
+        if (this.state.loading){
+            return <AppLoading />;
+        }
+        return ( 
+            <EmaginiStartScreen />
+        );
     }
 }
