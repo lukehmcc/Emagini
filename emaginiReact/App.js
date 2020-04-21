@@ -39,11 +39,9 @@ import Svg, {
   } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
-import EmaginiStartScreen from './app/index';
-
+import Navegator from './routes/homeStack';
 
 const polaroidPic = './assets/images/polariod.png'
-
 
 export default class Emagini extends React.Component {
     constructor(props){
@@ -65,7 +63,7 @@ export default class Emagini extends React.Component {
             return <AppLoading />;
         }
         return ( 
-            <EmaginiStartScreen />
+            <Navegator />
         );
     }
 }

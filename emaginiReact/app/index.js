@@ -1,7 +1,10 @@
 /*
  This is an app created by a literal god
  */
-import React, { Component, useState, useEffect } from 'react';
+// Main Imports
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { Component, useState, useEffect } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -11,6 +14,7 @@ import {
     Image,
     ImageBackground,
     TouchableOpacity,
+    CameraRoll,
 } from 'react-native';
 import { 
     AppLoading,
@@ -44,12 +48,16 @@ import {
     TapGestureHandler, 
     State,
 } from 'react-native-gesture-handler';
+
+
+// Defining Constants
 const { 
 Value, 
 timing, 
 } = Animated; 
 const polaroidPic = '../assets/images/polariods.png';
 
+// Heres that start screen
 class EmaginiStartScreen extends Component {
 
     // This is for later
@@ -63,7 +71,7 @@ class EmaginiStartScreen extends Component {
     //     };
     //     this._anim = timing(this._rotX, this._config);
     // }
-    
+
     render(){
         return(
             <View style={styles.container}>
@@ -82,7 +90,6 @@ class EmaginiStartScreen extends Component {
                         <Image style={styles.polariod} source={require(polaroidPic)} ></Image> 
                         <View style={styles.lineBelowPols}/>
 
-
                         <View style={styles.wordsAndLinesContainer}>
                             <Text style={styles.words}>
                                 A photo backup Service that <Text style={styles.wordsBold}> respects </Text> your privacy…
@@ -93,7 +100,9 @@ class EmaginiStartScreen extends Component {
                         </View>
 
                         <View style={styles.buttonContainer}>
-                            <TouchableOpacity style={styles.getStartedButton}>
+                            <TouchableOpacity 
+                                onPress={() => this.props.navigation.push('Gallery')}
+                                style={styles.getStartedButton}>
                                 <Text style={styles.buttonText1}>Let's get started!</Text>
                             </TouchableOpacity>
                             <TouchableOpacity >
@@ -108,6 +117,7 @@ class EmaginiStartScreen extends Component {
 
 export default EmaginiStartScreen;
 
+//And some style
 const styles = StyleSheet.create({
     container: {
         flex: 1,
