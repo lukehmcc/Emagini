@@ -22,26 +22,6 @@ import {
 } from 'expo';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
-import Svg, {
-    Circle,
-    Ellipse,
-    G,
-    TSpan,
-    TextPath,
-    Path,
-    Polygon,
-    Polyline,
-    Line,
-    Rect,
-    Use,
-    Symbol,
-    Defs,
-    RadialGradient,
-    Stop,
-    ClipPath,
-    Pattern,
-    Mask,
-  } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { Easing } from 'react-native-reanimated';
 import { 

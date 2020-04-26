@@ -1,5 +1,5 @@
 Arguments: 
-  /home/luke/.nvm/versions/node/v13.11.0/bin/node /usr/share/yarn/bin/yarn.js add CameraRoll
+  /home/luke/.nvm/versions/node/v13.11.0/bin/node /usr/share/yarn/bin/yarn.js add nativebase
 
 PATH: 
   /home/luke/.yarn/bin:/home/luke/bin:/home/luke/.local/bin:/home/luke/.nvm/versions/node/v13.11.0/bin:/home/luke/.yarn/bin:/home/luke/bin:/home/luke/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/luke/.local/bin/:/home/luke/.local/bin/
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/CameraRoll: Not found
+  Error: https://registry.yarnpkg.com/nativebase: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:315:20)
@@ -42,6 +42,7 @@ npm manifest:
     },
     "dependencies": {
       "@expo/vector-icons": "~10.0.6",
+      "@react-native-community/cameraroll": "^1.5.2",
       "@react-native-community/masked-view": "0.1.6",
       "@react-navigation/bottom-tabs": "^5.0.0",
       "@react-navigation/native": "^5.1.6",
@@ -1421,6 +1422,11 @@ Lockfile:
       "@types/istanbul-reports" "^1.1.1"
       "@types/yargs" "^15.0.0"
       chalk "^3.0.0"
+  
+  "@react-native-community/cameraroll@^1.5.2":
+    version "1.5.2"
+    resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-1.5.2.tgz#6db66bd39816ef19051e024e44f31f4a8de5b3c1"
+    integrity sha512-xrkrmcI5V8IzWoGQOqycs2YZRmGqASqZMDkjOzFFg6bCy95+OMquPnCmGdaUx1ONO1x6tsQSCv87xM/oL+9m/A==
   
   "@react-native-community/cli-debugger-ui@^3.0.0":
     version "3.0.0"

@@ -7,13 +7,13 @@ const screens = {
     Launch: {
         screen: EmaginiStartScreen,
         navigationOptions: {
-            header: null,
+            headerShown: false,
           }
     },
     Gallery: {
         screen: EmaginiPhotoGallery,
         navegationOptions: {
-            header: null,
+            headerShown: false,
         }
     }
 }

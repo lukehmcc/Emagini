@@ -17,29 +17,10 @@ import {
     AuthSession,
 } from 'expo';
 import { Asset } from 'expo-asset';
-import Svg, {
-    Circle,
-    Ellipse,
-    G,
-    TSpan,
-    TextPath,
-    Path,
-    Polygon,
-    Polyline,
-    Line,
-    Rect,
-    Use,
-    Symbol,
-    Defs,
-    RadialGradient,
-    Stop,
-    ClipPath,
-    Pattern,
-    Mask,
-  } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
 import Navegator from './routes/homeStack';
+import { PermissionsAndroid } from 'react-native';
 
 const polaroidPic = './assets/images/polariod.png'
 
@@ -48,7 +29,18 @@ export default class Emagini extends React.Component {
         super(props);
         this.state = { loading: true };
     }
-
+    async requestPhotosPermission() {
+        try {
+          const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE)
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+              this.getPhotos();
+            } else {
+              console.log("Photos permission denied")
+            }
+        } catch (err) {
+          console.warn(err)
+        }
+    }
     async componentDidMount() {
       await Font.loadAsync({
         regular: require('./assets/fonts/Ubuntu-R.ttf'),

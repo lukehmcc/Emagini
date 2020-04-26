@@ -1645,6 +1645,13 @@
     lodash "^4.5.0"
     prop-types "^15.6.1"
 
+ImageViewer@^1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/ImageViewer/-/ImageViewer-1.5.8.tgz#581801d704e7e75833793b908cac50e7c8860d33"
+  integrity sha512-f63K6/LMTUgPNhBuWcJUakhprkKCpuyYE7jQIlKOJeN9ovLt1IsVAmBBpOeR+b2rNFHxO9860PFUjvsPF3e7xA==
+  dependencies:
+    prop-types "^15.6.0"
+
 abab@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.3.tgz#623e2075e02eb2d3f2475e49f99c91846467907a"
@@ -3140,6 +3147,13 @@ expo-font@^8.1.1, expo-font@~8.1.0:
     fbjs "1.0.0"
     fontfaceobserver "^2.1.0"
 
+expo-image-picker@~8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-8.1.0.tgz#014e4f4aaef4c1daf56d13de27a41ef78660aa15"
+  integrity sha512-UMHiDGiflg47A/nfnmJ1gYdB/sEoxB4STVGgMeLNYpUkVR59kUWqsGTyVEtSywNCLPuXPZVB9NaRUd81Rbs7lA==
+  dependencies:
+    expo-permissions "~8.1.0"
+
 expo-keep-awake@~8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.1.0.tgz#3a1d8aa5a8395d40c7d79e1c93020ae5f848e664"
@@ -3156,6 +3170,11 @@ expo-location@~8.1.0:
   integrity sha512-G9JvsK1t9Z5Iybf+FCG81Jgm9Ee9leqpazxOPVabUJEWu/55Iex3yLGX04BuIA4ozAlJKBPzkhPdyqKdC7zrSw==
   dependencies:
     invariant "^2.2.4"
+
+expo-media-library@~8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-8.1.0.tgz#f5d4b24819aa518e69d971f92b55c12f60c85ba5"
+  integrity sha512-2oO6UtV4akgX9o5Ok9BRwLh5NZzDk43QBW5RP/EHVSzuVn2yn7IXstmr9wnTl1BpqkPoV8u6w3g9EeU1I2Jljw==
 
 expo-permissions@~8.1.0:
   version "8.1.0"
@@ -3597,6 +3616,11 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
+get-window-size@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/get-window-size/-/get-window-size-0.1.0.tgz#0bfe02a069b63459638a1cdf84484b76fc6cec64"
+  integrity sha1-C/4CoGm2NFljihzfhEhLdvxs7GQ=
+
 getpass@^0.1.1:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
@@ -3798,6 +3822,14 @@ image-size@^0.6.0:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
   integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
+
+image-viewer@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/image-viewer/-/image-viewer-0.2.3.tgz#12d9a68c11a5c3f33b8ddfd02e92f45d8f3b3f4a"
+  integrity sha1-EtmmjBGlw/M7jd/QLpL0XY87P0o=
+  dependencies:
+    get-window-size "^0.1.0"
+    jquery-mousewheel "^3.1.13"
 
 immediate@^3.2.2:
   version "3.2.3"
@@ -4573,6 +4605,11 @@ jetifier@^1.6.2:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.5.tgz#ea87324a4230bef20a9651178ecab978ee54a8cb"
   integrity sha512-T7yzBSu9PR+DqjYt+I0KVO1XTb1QhAfHnXV5Nd3xpbXM6Xg4e3vP60Q4qkNU8Fh6PHC2PivPUNN3rY7G2MxcDQ==
+
+jquery-mousewheel@^3.1.13:
+  version "3.1.13"
+  resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
+  integrity sha1-BvAzXxbjU6aV5yBr9QUDy1I6buU=
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -6110,6 +6147,20 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-native-animatable@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
+  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-native-camera-roll-picker@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-2.0.0.tgz#f5f328a85749e1f11b16fe29a4e44ef46fffede4"
+  integrity sha512-Ou3gybEwmLXQkouaBZPJ+cfSbAcAD0Lex9/kRR4orFWROal+VipVO75YW7+5Mo2SgJL24i0TG/dqUfOt2WW7+w==
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-drawer@2.5.1:
   version "2.5.1"
