@@ -1,4 +1,8 @@
 # Emagini
+
+This project has been dead for a while and if I were to do it again, I would re-write it from scratch so this repo is useless. 
+
+###########################################################################################################
 It's a basic photo storage app build on the Sia backbone.
 
 Also I moved to gitlab cuz I felt like it... I'm not gonna link it though cuz github might stab me if I link to their competitor.
